@@ -36,7 +36,17 @@ class Program
             }
             catch (Exception ex)
             {
-                
+                if (imageExtensions.IsMatch(Path.GetExtension(file)))
+                {
+                    //якщо файл має графічне розширення, але не відкривається
+                    Console.WriteLine($"Файл \"{file}\" не містить зображення, хоча має відповідне розширення." +
+                        $"\nПомилка: {ex.Message}");
+                }
+                else
+                {
+                    //ігнор. файли без граф. розширення
+                    Console.WriteLine($"Файл \"{file}\" не є графічним.");
+                }
             }
         }
 
