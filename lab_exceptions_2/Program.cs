@@ -12,7 +12,19 @@ class Program
         //регулярний вираз перевірки графічних розширень
         Regex imageExtensions = new Regex(@"(bmp|gif|tiff?|jpe?g|png)$", RegexOptions.IgnoreCase);
 
-        
+        foreach (string file in files)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
+        Console.WriteLine("***");
     }
 }
 
