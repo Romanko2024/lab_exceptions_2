@@ -16,7 +16,23 @@ class Program
         {
             try
             {
-                
+                //
+                using (Bitmap bitmap = new Bitmap(file))
+                {
+                    //дзеркало по вертикалі
+                    bitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
+
+                    //нове ім'я, що збер. в currentDirectory,
+                    string newFileName = Path.Combine(
+                        currentDirectory,
+                        Path.GetFileNameWithoutExtension(file) + "-mirrored.gif"
+                    );
+
+                    //збереження .GIF
+                    bitmap.Save(newFileName, System.Drawing.Imaging.ImageFormat.Gif);
+
+                    Console.WriteLine($"Файл збережено: {newFileName}");
+                }
             }
             catch (Exception ex)
             {
